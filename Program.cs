@@ -16,7 +16,7 @@ app.UseCors(policy =>
           .AllowAnyHeader());
 app.UseSwagger();
 app.UseSwaggerUI();
-
+app.MapGet("/", () => "ToDo API is running!");
 app.MapGet("/items", async (ToDoDbContext db) =>
 {
     return await db.Items.ToListAsync();
